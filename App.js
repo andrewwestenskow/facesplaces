@@ -1,11 +1,28 @@
-import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import React, { Component } from 'react'
+import { View, Text, StyleSheet, Button} from 'react-native'
 
 
-const App = (props) => {
-  return (
-    <Text>App</Text>
-)
+
+
+class App extends Component {
+
+  state = {
+    position: ''
+  }
+
+  getLocation = () => {
+    navigator.geolocation.getCurrentPosition(position=>{
+      console.log(position)
+    }, err=>console.log(err))
+  }
+  render() {
+    return (
+      <View>
+        <Text>Andrew</Text>
+        <Button title='get location' onPress={this.getLocation}/>
+      </View>
+    )
+  }
 }
 export default App
 
