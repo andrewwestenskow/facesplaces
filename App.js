@@ -11,6 +11,7 @@ class App extends Component {
   }
 
   getLocation = () => {
+    //This is where I'm trying to get location
     navigator.geolocation.getCurrentPosition(position=>{
       console.log(position)
     }, err=>console.log(err))
